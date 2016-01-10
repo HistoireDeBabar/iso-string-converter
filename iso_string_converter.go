@@ -1,6 +1,6 @@
 // Package provides a converter for iso time formatted strings
 // into a Time object.
-package iso_converter
+package isoConverter
 
 import (
 	"strings"

@@ -1,4 +1,4 @@
-package iso_converter
+package isoConverter
 
 import (
 	"testing"
