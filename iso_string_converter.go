@@ -7,6 +7,8 @@ import (
 	"time"
 )
 
+const form = "2006-Jan-02"
+
 var (
 	months = map[string]string{
 		"01": "Jan",
@@ -24,8 +26,8 @@ var (
 	}
 )
 
-// given a ISO Time formatted string, returns a Time instance
-// Is string is invalid, returns a Zero Time.
+// Given a ISO Time formatted string e.g. "2016-Jan-04",
+// returns a Time instance if string is valid, else returns a Zero Time.
 func IsoStringToDate(isoTimeValue string) (setTime time.Time) {
 	if isoTimeValue == "" {
 		return time.Time{}
@@ -50,7 +52,6 @@ func IsoStringToDate(isoTimeValue string) (setTime time.Time) {
 	}
 
 	shortTime := strings.Join(shortTimeArray, "-")
-	const form = "2006-Jan-02"
 	setTime, err := time.Parse(form, shortTime)
 
 	if err != nil {
